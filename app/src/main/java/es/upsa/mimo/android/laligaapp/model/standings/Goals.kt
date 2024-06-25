@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Goals (
 
-  @SerializedName("against" ) var against : Int? = null,
-  @SerializedName("for"     ) var for     : Int? = null
+  @SerializedName("against" ) var goalsAgainst : Int? = null,
+  @SerializedName("for"     ) var goalsFor     : Int? = null
 
 )
