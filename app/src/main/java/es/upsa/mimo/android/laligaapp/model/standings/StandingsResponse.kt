@@ -1,9 +1,9 @@
-package es.upsa.mimo.android.laligaapp
+package es.upsa.mimo.android.laligaapp.model.standings
 
 import com.google.gson.annotations.SerializedName
 
 
-data class TeamsResponse (
+data class StandingsResponse (
 
   @SerializedName("errors"     ) var errors     : ArrayList<String>   = arrayListOf(),
   @SerializedName("get"        ) var get        : String?             = null,

@@ -27,7 +27,6 @@ class TeamsFragment : Fragment(R.layout.fragment_teams){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Call your ApiService within a coroutine scope
         lifecycleScope.launch {
             val response = ApiClient.apiService.getTeams(league = 140, season = 2023)
 

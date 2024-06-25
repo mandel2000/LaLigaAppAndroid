@@ -1,4 +1,4 @@
-package es.upsa.mimo.android.laligaapp
+package es.upsa.mimo.android.laligaapp.model.teams
 
 import com.google.gson.annotations.SerializedName
 
