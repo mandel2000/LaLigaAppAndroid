@@ -8,7 +8,7 @@ object ApiClient {
 
     private const val API_KEY = "e4d01e5334msh9db6a390fbc8185p1360a1jsnb8cda4c74309"
     private const val API_HOST = "api-football-v1.p.rapidapi.com"
-    private const val API_URL = "https://api-football-v1.p.rapidapi.com/v3"
+    private const val API_URL = "https://api-football-v1.p.rapidapi.com/v3/"
 
     val headers = mapOf(
         "X-RapidApi-Key" to API_KEY,
