@@ -13,12 +13,12 @@ class TeamsRepository (private val apiService: ApiService){
     suspend fun getTeam(league: Int, season: Int): Flow<ApiState<TeamsResponse>> {
         return flow {
 
-            // get the comment Data from the api
-            val comment=apiService.getTeams(league, season)
+            // get the teams Data from the api
+            val teams=apiService.getTeams(league, season)
 
             // Emit this data wrapped in
             // the helper class [CommentApiState]
-            emit(ApiState.success(comment))
+            emit(ApiState.success(teams))
         }.flowOn(Dispatchers.IO)
     }
 }
