@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LaLigaApp</string>
+    <string name="teams">Equipos</string>
+    <string name="standings">Clasificación</string>
+    <string name="favorites">Favoritos</string>
+    <string name="fixtures">Partidos</string>
+</resources>
