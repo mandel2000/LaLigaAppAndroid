@@ -19,13 +19,13 @@ interface ApiService {
         suspend fun getFixtures(
                 @Query("league") league: Int,
                 @Query("season") season: Int
-        ): Response<FixturesResponse>
+        ): FixturesResponse
 
         @GET("standings")
         suspend fun getStandings(
                 @Query("league") league: Int,
                 @Query("season") season: Int
-        ): Response<StandingsResponse>
+        ): StandingsResponse
 
 
 

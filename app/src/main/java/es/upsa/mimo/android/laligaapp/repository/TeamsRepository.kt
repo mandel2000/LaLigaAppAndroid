@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flowOn
 
 class TeamsRepository (private val apiService: ApiService){
 
-    suspend fun getTeam(league: Int, season: Int): Flow<ApiState<TeamsResponse>> {
+    suspend fun getTeams(league: Int, season: Int): Flow<ApiState<TeamsResponse>> {
         return flow {
 
             // get the teams Data from the api

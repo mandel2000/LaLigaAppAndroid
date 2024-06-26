@@ -1,7 +1,6 @@
 package es.upsa.mimo.android.laligaapp.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.adapters.TeamsGridAdapter
-import es.upsa.mimo.android.laligaapp.model.teams.TeamsResp
-import es.upsa.mimo.android.laligaapp.network.ApiClient
 import es.upsa.mimo.android.laligaapp.network.Status
 import es.upsa.mimo.android.laligaapp.viewmodel.TeamsViewModel
 import kotlinx.coroutines.launch
@@ -41,7 +38,7 @@ class TeamsFragment : Fragment(R.layout.fragment_teams){
 
         lifecycleScope.launch {
 
-            viewModel.commentState.collect{
+            viewModel.teamsState.collect{
                 when(it.status){
                     Status.LOADING -> {
 

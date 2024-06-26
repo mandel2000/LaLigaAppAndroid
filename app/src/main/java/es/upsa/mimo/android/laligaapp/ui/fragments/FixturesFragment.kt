@@ -26,14 +26,14 @@ class FixturesFragment : Fragment(R.layout.fragment_fixtures){
         lifecycleScope.launch {
             val response = ApiClient.apiService.getFixtures(league = 140, season = 2023)
 
-            if (response.isSuccessful) {
-                val fixturesData = response.body()
-                fixturesData?.fixtureResp?.forEach { resp -> Log.d("FixturesFragment", "Fixture data: ${resp}")}
-
-            } else {
-                // Handle API error
-                Log.e("FixturesFragment", "Error: ${response.message()}")
-            }
+//            if (response.isSuccessful) {
+//                val fixturesData = response.body()
+//                fixturesData?.fixtureResp?.forEach { resp -> Log.d("FixturesFragment", "Fixture data: ${resp}")}
+//
+//            } else {
+//                // Handle API error
+//                Log.e("FixturesFragment", "Error: ${response.message()}")
+//            }
 
 
         }
