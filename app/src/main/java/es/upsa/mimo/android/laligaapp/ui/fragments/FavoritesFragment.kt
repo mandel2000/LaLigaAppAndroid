@@ -1,4 +1,4 @@
-package es.upsa.mimo.android.laligaapp.ui.teams
+package es.upsa.mimo.android.laligaapp.ui.fragments
 
 import androidx.fragment.app.Fragment
 import es.upsa.mimo.android.laligaapp.R

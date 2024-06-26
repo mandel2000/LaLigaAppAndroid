@@ -7,22 +7,22 @@
 
     <fragment
         android:id="@+id/navigation_teams"
-        android:name="es.upsa.mimo.android.laligaapp.ui.teams.TeamsFragment"
+        android:name="es.upsa.mimo.android.laligaapp.ui.fragments.TeamsFragment"
         android:label="Home"
         tools:layout="@layout/fragment_teams" />
     <fragment
         android:id="@+id/navigation_fixtures"
-        android:name="es.upsa.mimo.android.laligaapp.ui.teams.FixturesFragment"
+        android:name="es.upsa.mimo.android.laligaapp.ui.fragments.FixturesFragment"
         android:label="Dashboard"
         tools:layout="@layout/fragment_fixtures" />
     <fragment
         android:id="@+id/navigation_standings"
-        android:name="es.upsa.mimo.android.laligaapp.ui.teams.StandingsFragment"
+        android:name="es.upsa.mimo.android.laligaapp.ui.fragments.StandingsFragment"
         android:label="Notifications"
         tools:layout="@layout/fragment_standings" />
     <fragment
         android:id="@+id/navigation_favorites"
-        android:name="es.upsa.mimo.android.laligaapp.ui.teams.FavoritesFragment"
+        android:name="es.upsa.mimo.android.laligaapp.ui.fragments.FavoritesFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_favorites" />
 </navigation>

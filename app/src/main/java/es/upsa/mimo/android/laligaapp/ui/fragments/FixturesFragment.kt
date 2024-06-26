@@ -1,4 +1,4 @@
-package es.upsa.mimo.android.laligaapp.ui.teams
+package es.upsa.mimo.android.laligaapp.ui.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -11,29 +11,28 @@ import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.network.ApiClient
 import kotlinx.coroutines.launch
 
-class StandingsFragment : Fragment(R.layout.fragment_standings){
+class FixturesFragment : Fragment(R.layout.fragment_fixtures){
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_standings, container, false)
+        return inflater.inflate(R.layout.fragment_fixtures, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         lifecycleScope.launch {
-            val response = ApiClient.apiService.getStandings(league = 140, season = 2023)
+            val response = ApiClient.apiService.getFixtures(league = 140, season = 2023)
 
             if (response.isSuccessful) {
-                val standingsData = response.body()
-                standingsData?.response?.forEach { resp -> Log.d("StandingsFragment", "Standings data: ${resp}")}
+                val fixturesData = response.body()
+                fixturesData?.fixtureResp?.forEach { resp -> Log.d("FixturesFragment", "Fixture data: ${resp}")}
 
             } else {
                 // Handle API error
-                Log.e("StandingsFragment", "Error: ${response.message()}")
+                Log.e("FixturesFragment", "Error: ${response.message()}")
             }
 
 

@@ -9,7 +9,7 @@ data class FixturesResponse (
   @SerializedName("get"        ) var get        : String?             = null,
   @SerializedName("paging"     ) var paging     : Paging?             = Paging(),
   @SerializedName("parameters" ) var parameters : Parameters?         = Parameters(),
-  @SerializedName("response"   ) var response   : ArrayList<Response> = arrayListOf(),
+  @SerializedName("response"   ) var fixtureResp   : ArrayList<FixtureResp> = arrayListOf(),
   @SerializedName("results"    ) var results    : Int?                = null
 
 )

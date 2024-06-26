@@ -3,7 +3,7 @@ package es.upsa.mimo.android.laligaapp.model.fixtures
 import com.google.gson.annotations.SerializedName
 
 
-data class Response (
+data class FixtureResp (
 
   @SerializedName("fixture" ) var fixture : Fixture? = Fixture(),
   @SerializedName("goals"   ) var goals   : Goals?   = Goals(),

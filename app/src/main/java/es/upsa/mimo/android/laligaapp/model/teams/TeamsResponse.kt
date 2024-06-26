@@ -9,7 +9,7 @@ data class TeamsResponse (
   @SerializedName("get"        ) var get        : String?             = null,
   @SerializedName("paging"     ) var paging     : Paging?             = Paging(),
   @SerializedName("parameters" ) var parameters : Parameters?         = Parameters(),
-  @SerializedName("response"   ) var response   : ArrayList<Response> = arrayListOf(),
+  @SerializedName("response"   ) var teamsResp   : ArrayList<TeamsResp> = arrayListOf(),
   @SerializedName("results"    ) var results    : Int?                = null
 
 )

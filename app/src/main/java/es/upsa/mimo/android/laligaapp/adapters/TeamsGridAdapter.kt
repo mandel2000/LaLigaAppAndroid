@@ -6,38 +6,36 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContentProviderCompat.requireContext
 import com.bumptech.glide.Glide
 import es.upsa.mimo.android.laligaapp.R
-import es.upsa.mimo.android.laligaapp.model.teams.Response
-import es.upsa.mimo.android.laligaapp.ui.teams.TeamsFragment
+import es.upsa.mimo.android.laligaapp.model.teams.TeamsResp
 
 internal class TeamsGridAdapter(
         // on below line we are creating two
         // variables for course list and context
-    private val courseList: List<Response>,
+    private val teamList: List<TeamsResp>,
     private val context: Context
     ) :
         BaseAdapter() {
         // in base adapter class we are creating variables
         // for layout inflater, course image view and course text view.
         private var layoutInflater: LayoutInflater? = null
-        private lateinit var courseTV: TextView
-        private lateinit var courseIV: ImageView
+        private lateinit var teamTV: TextView
+        private lateinit var teamIV: ImageView
 
         // below method is use to return the count of course list
         override fun getCount(): Int {
-            return courseList.size
+            return teamList.size
         }
 
         // below function is use to return the item of grid view.
-        override fun getItem(position: Int): Any? {
-            return null
+        override fun getItem(position: Int): Any {
+            return teamList[position]
         }
 
         // below function is use to return item id of grid view.
         override fun getItemId(position: Int): Long {
-            return 0
+            return teamList[position].team?.id?.toLong()!!
         }
 
         // in below function we are getting individual item of grid view.
@@ -58,12 +56,12 @@ internal class TeamsGridAdapter(
             }
             // on below line we are initializing our course image view
             // and course text view with their ids.
-            courseIV = convertView!!.findViewById(R.id.idIVCourse)
-            courseTV = convertView!!.findViewById(R.id.idTVCourse)
+            teamIV = convertView!!.findViewById(R.id.idIVCourse)
+            teamTV = convertView.findViewById(R.id.idTVCourse)
             // on below line we are setting image for our course image view.
-            Glide.with(convertView).load(courseList[position].team?.logo).into(courseIV)
+            Glide.with(convertView).load(teamList[position].team?.logo).into(teamIV)
             // on below line we are setting text in our course text view.
-            courseTV.text = courseList[position].team?.name
+            teamTV.text = teamList[position].team?.name
             // at last we are returning our convert view.
             return convertView
         }
