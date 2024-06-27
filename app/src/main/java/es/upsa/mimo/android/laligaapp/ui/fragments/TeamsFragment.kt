@@ -48,9 +48,9 @@ class TeamsFragment : Fragment(R.layout.fragment_teams){
                         it.data?.let { teamResponse ->
                             val teamData = teamResponse.teamsResp
 
-                            val courseAdapter = TeamsGridAdapter(teamList = teamData, requireContext())
+                            val teamsAdapter = TeamsGridAdapter(teamList = teamData, requireContext())
                             // on below line we are setting adapter to our grid view.
-                            teamsGridView.adapter = courseAdapter
+                            teamsGridView.adapter = teamsAdapter
                             // on below line we are adding on item
                             // click listener for our grid view.
                             teamsGridView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->

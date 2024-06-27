@@ -8,9 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import es.upsa.mimo.android.laligaapp.R
+import es.upsa.mimo.android.laligaapp.adapters.FixturesAdapter
 import es.upsa.mimo.android.laligaapp.network.ApiClient
 import es.upsa.mimo.android.laligaapp.network.Status
+import es.upsa.mimo.android.laligaapp.ui.decoration.DividerItemDecoration
 import es.upsa.mimo.android.laligaapp.viewmodel.FixturesViewModel
 import kotlinx.coroutines.launch
 
@@ -27,10 +31,13 @@ class FixturesFragment : Fragment(R.layout.fragment_fixtures){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val fixturesListView : RecyclerView = view.findViewById(R.id.fixturesList)
+        fixturesListView.layoutManager = LinearLayoutManager(requireContext())
+        fixturesListView.addItemDecoration(DividerItemDecoration())
 
-        viewModel = ViewModelProvider(this).get(FixturesViewModel::class.java)
-
+        viewModel = ViewModelProvider(this)[FixturesViewModel::class.java]
         viewModel.getFixtures(140, 2023)
+
         lifecycleScope.launch {
 
             viewModel.fixturesState.collect{
@@ -40,7 +47,12 @@ class FixturesFragment : Fragment(R.layout.fragment_fixtures){
                     }
                     Status.SUCCESS -> {
                         Log.d("FixturesFragment", "Success")
-                        it.data?.fixtureResp?.forEach { resp -> Log.d("FixturesFragment", "Fixture data: ${resp}")}
+                        it.data?.let { fixturesResponse ->
+                            val fixturesData = fixturesResponse.fixtureResp
+
+                            val fixturesAdapter = FixturesAdapter(fixturesList = fixturesData)
+                            fixturesListView.adapter = fixturesAdapter
+                        }
                     }
                     Status.ERROR -> {
                         Log.d("FixturesFragment", "Error")
