@@ -8,9 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import es.upsa.mimo.android.laligaapp.R
+import es.upsa.mimo.android.laligaapp.adapters.StandingsAdapter
 import es.upsa.mimo.android.laligaapp.network.ApiClient
 import es.upsa.mimo.android.laligaapp.network.Status
+import es.upsa.mimo.android.laligaapp.ui.decoration.TableDividerItemDecorator
 import es.upsa.mimo.android.laligaapp.viewmodel.StandingsViewModel
 import kotlinx.coroutines.launch
 
@@ -29,8 +33,10 @@ class StandingsFragment : Fragment(R.layout.fragment_standings){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val standingsTableView : RecyclerView = view.findViewById(R.id.standingsRecyclerView)
+        standingsTableView.layoutManager = LinearLayoutManager(requireContext())
+        standingsTableView.addItemDecoration(TableDividerItemDecorator())
         viewModel = ViewModelProvider(this).get(StandingsViewModel::class.java)
-
         viewModel.getStandings(140, 2023)
 
         lifecycleScope.launch {
@@ -42,7 +48,12 @@ class StandingsFragment : Fragment(R.layout.fragment_standings){
                     }
                     Status.SUCCESS ->{
                         Log.d("StandingsFragment", "Success")
-                        it.data?.standingsResp?.forEach { resp -> Log.d("StandingsFragment", "Standings data: ${resp}")}
+                        it.data?.standingsResp?.let{standingsResponse ->
+
+                            val standingsData = standingsResponse.get(0).league?.standings?.get(0)!!
+                            val standingsAdapter = StandingsAdapter(dataList = standingsData)
+                            standingsTableView.adapter = standingsAdapter
+                        }
                     }
                     Status.ERROR ->{
                         Log.d("StandingsFragment", "Error")

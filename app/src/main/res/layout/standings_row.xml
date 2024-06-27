@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/teamTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:text="Equipo A"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/playedTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:gravity="center"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/victoriesTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:gravity="center"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/drawsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:gravity="center"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/losesTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:gravity="center"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/gfTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:gravity="center"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/gaTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:gravity="center"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/gdTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:gravity="center"
+        android:padding="4dp"/>
+
+    <TextView
+        android:id="@+id/pointsTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="0"
+        android:gravity="center"
+        android:padding="4dp"/>
+
+</LinearLayout>

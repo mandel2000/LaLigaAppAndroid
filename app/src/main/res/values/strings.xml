@@ -4,4 +4,13 @@
     <string name="standings">Standings</string>
     <string name="favorites">Favorites</string>
     <string name="fixtures">Fixtures</string>
+    <string name="club" translatable="false">Club</string>
+    <string name="gp">GP</string>
+    <string name="w">W</string>
+    <string name="d">D</string>
+    <string name="l">L</string>
+    <string name="gf" translatable="false">GF</string>
+    <string name="ga">GA</string>
+    <string name="gd">GD</string>
+    <string name="pts" translatable="false">Pts</string>
 </resources>

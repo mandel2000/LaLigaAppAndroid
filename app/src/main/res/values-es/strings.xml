@@ -5,4 +5,10 @@
     <string name="standings">Clasificación</string>
     <string name="favorites">Favoritos</string>
     <string name="fixtures">Partidos</string>
+    <string name="gp">PJ</string>
+    <string name="w">V</string>
+    <string name="d">E</string>
+    <string name="l">D</string>
+    <string name="ga">GC</string>
+    <string name="gd">DG</string>
 </resources>
