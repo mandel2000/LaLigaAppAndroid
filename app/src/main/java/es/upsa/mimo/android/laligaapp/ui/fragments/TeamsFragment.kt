@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.adapters.TeamsGridAdapter
 import es.upsa.mimo.android.laligaapp.network.Status
@@ -36,6 +37,8 @@ class TeamsFragment : Fragment(R.layout.fragment_teams){
 
         viewModel.getTeams(140, 2023)
 
+        val navController = findNavController();
+
         lifecycleScope.launch {
 
             viewModel.teamsState.collect{
@@ -49,13 +52,14 @@ class TeamsFragment : Fragment(R.layout.fragment_teams){
                             val teamData = teamResponse.teamsResp
 
                             val teamsAdapter = TeamsGridAdapter(teamList = teamData, requireContext())
-                            // on below line we are setting adapter to our grid view.
+
                             teamsGridView.adapter = teamsAdapter
-                            // on below line we are adding on item
-                            // click listener for our grid view.
+
                             teamsGridView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-                                // inside on click method we are simply displaying
-                                // a toast message with course name.
+
+                                val action = TeamsFragmentDirections.actionTeamsFragmentToTeamDetailFragment(teamData[position].team?.id!!)
+                                findNavController().navigate(action)
+
                                 Toast.makeText(
                                     context, teamData[position].team?.name + " selected",
                                     Toast.LENGTH_SHORT

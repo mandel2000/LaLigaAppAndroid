@@ -9,7 +9,19 @@
         android:id="@+id/navigation_teams"
         android:name="es.upsa.mimo.android.laligaapp.ui.fragments.TeamsFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_teams" />
+        tools:layout="@layout/fragment_teams">
+        <action android:id="@+id/action_teamsFragment_to_teamDetailFragment"
+            app:destination="@id/navigation_team_detail"/>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_team_detail"
+        android:name="es.upsa.mimo.android.laligaapp.ui.fragments.TeamDetailFragment"
+        android:label="Team Detail" >
+        <argument
+            android:name="teamId"
+            app:argType="integer"/>
+    </fragment>
+
     <fragment
         android:id="@+id/navigation_fixtures"
         android:name="es.upsa.mimo.android.laligaapp.ui.fragments.FixturesFragment"
