@@ -1,6 +1,7 @@
 package es.upsa.mimo.android.laligaapp.model.teams
 
 import com.google.gson.annotations.SerializedName
+import es.upsa.mimo.android.laligaapp.db.entities.TeamEntity
 
 
 data class Team (
@@ -13,4 +14,6 @@ data class Team (
   @SerializedName("name"     ) var name     : String?  = null,
   @SerializedName("national" ) var national : Boolean? = null
 
-)
+){
+  fun toTeamEntity() = TeamEntity(id = id!!, name = name!!, logo = logo!!)
+}

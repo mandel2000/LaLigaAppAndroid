@@ -12,7 +12,7 @@ import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.model.players.PlayerResp
 
 internal class PlayerListAdapter (
-    private val playersList : List<PlayerResp>
+    private var playersList : MutableList<PlayerResp>
     ): RecyclerView.Adapter<PlayerListAdapter.PlayerViewHolder>() {
 
         class PlayerViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -35,6 +35,12 @@ internal class PlayerListAdapter (
         holder.playerName.text = player.player?.name
         Glide.with(holder.itemView).load(player.player?.photo).into(holder.playerPhoto)
 
+    }
+
+    fun addPlayers(newPlayers: List<PlayerResp>) {
+        val positionStart = playersList.size
+        playersList.addAll(newPlayers)
+        notifyItemRangeInserted(positionStart, newPlayers.size) // Or notifyItemRangeInserted() for smoother updates
     }
 
 }

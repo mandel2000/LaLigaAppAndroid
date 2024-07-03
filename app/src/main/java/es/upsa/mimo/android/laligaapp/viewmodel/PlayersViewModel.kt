@@ -25,9 +25,20 @@ class PlayersViewModel : ViewModel(){
         )
     )
 
+    private val currentPage = 1
+
     init {
 
-        getTeamPlayers(1,140, 2023)
+        getTeamPlayers(1,2023, currentPage)
+    }
+
+    fun loadPlayers(teamId:Int, season: Int){
+        getTeamPlayers(teamId,season, currentPage)
+    }
+
+    fun loadMorePlayers(teamId:Int, season: Int){
+
+        getTeamPlayers(teamId,season, currentPage+1)
     }
 
     fun getTeamPlayers(team: Int, season:Int,  page: Int) {
