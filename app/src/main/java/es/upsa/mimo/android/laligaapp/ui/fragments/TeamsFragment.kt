@@ -1,6 +1,7 @@
 package es.upsa.mimo.android.laligaapp.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -77,6 +78,12 @@ class TeamsFragment : Fragment(R.layout.fragment_teams){
 
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Navigation", "Current destination: ${findNavController().currentDestination?.id}")
+    }
+
 
 
 
