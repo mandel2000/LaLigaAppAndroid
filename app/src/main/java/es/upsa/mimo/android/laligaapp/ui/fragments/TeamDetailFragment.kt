@@ -55,6 +55,7 @@ class TeamDetailFragment : Fragment(R.layout.fragment_team_detail){
         val teamBadge : ImageView = view.findViewById(R.id.teamBadge)
         val teamName: TextView = view.findViewById(R.id.teamName)
         val city: TextView = view.findViewById(R.id.city)
+        val starButton: ToggleButton = view.findViewById(R.id.favButton)
 
 
         lifecycleScope.launch {
@@ -69,19 +70,26 @@ class TeamDetailFragment : Fragment(R.layout.fragment_team_detail){
                             teamName.text = teamDetails.team?.name
                             city.text = teamDetails.venue?.city + ", " + teamDetails.team?.country
                             Glide.with(view).load(teamDetails.team?.logo).into(teamBadge)
+                            val sharedViewModel: SharedViewModel by activityViewModels()
+                            sharedViewModel.database.teamDao().let { teamDao ->
+                                lifecycleScope.launch {
+                                    val isFav = teamDao.existsById(teamDetails.team?.id!!)
+                                    starButton.isChecked = isFav
+                                }
+                            }
 
-                            val starButton: ToggleButton = view.findViewById(R.id.favButton)
                             starButton.setOnCheckedChangeListener { _, isChecked ->
                                 val teamEntity = teamDetails.team?.toTeamEntity()
 
                                 if (isChecked) {
-                                    deleteTeam(teamEntity?.id)
+                                    insertTeam(teamEntity)
+
                                     Toast.makeText(
                                         context, "Equipo " + teamDetails.team?.name + " añadido a favoritos",
                                         Toast.LENGTH_SHORT
                                     ).show()
                                 } else {
-                                    insertTeam(teamEntity)
+                                    deleteTeam(teamEntity?.id)
                                     Toast.makeText(
                                         context, "Equipo " + teamDetails.team?.name + " eliminado de favoritos",
                                         Toast.LENGTH_SHORT

@@ -20,4 +20,7 @@ interface TeamDao {
     @Query("SELECT * FROM TeamEntity")
     fun getAllTeams() : Flow<List<TeamEntity>>
 
+    @Query("SELECT EXISTS(SELECT * FROM TeamEntity WHERE id = :id)")
+    suspend fun existsById(id: Int): Boolean
+
 }

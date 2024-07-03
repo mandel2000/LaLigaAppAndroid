@@ -21,3 +21,7 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class androidx.compose.material.icons.Icons { *; }
+-keep class androidx.room.** { *; }
+-keepclassmembers class * extends androidx.room.RoomDatabase {
+    public static ** create(**);
+}
