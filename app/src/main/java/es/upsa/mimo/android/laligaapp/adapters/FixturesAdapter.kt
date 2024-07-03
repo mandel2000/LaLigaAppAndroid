@@ -27,7 +27,7 @@ internal class FixturesAdapter (
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FixtureViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fixture_item, parent, false) // Replace with your item layout
+            .inflate(R.layout.fixture_item, parent, false)
         return FixtureViewHolder(itemView)
     }
 
