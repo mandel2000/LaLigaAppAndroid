@@ -13,4 +13,5 @@
     <string name="ga">GA</string>
     <string name="gd">GD</string>
     <string name="pts" translatable="false">Pts</string>
+    <string name="settings">Settings</string>
 </resources>
