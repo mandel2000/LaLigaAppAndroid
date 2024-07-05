@@ -1,5 +1,6 @@
 package es.upsa.mimo.android.laligaapp.ui.fragments
 
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -113,6 +114,8 @@ class TeamDetailFragment : Fragment(R.layout.fragment_team_detail){
     }
 
     private fun insertTeam(teamEntity: TeamEntity?) {
+
+
         if(null != teamEntity){
             val sharedViewModel: SharedViewModel by activityViewModels()
             sharedViewModel.database.teamDao().let { teamDao ->

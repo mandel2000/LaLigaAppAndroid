@@ -13,4 +13,15 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <!-- Other theme customizations -->
     </style>
+
+    <style name="SettingsActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/SettingsAnimation</item>
+    </style>
+
+    <style name="SettingsAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_right</item>
+    </style>
 </resources>

@@ -12,4 +12,10 @@
     <string name="ga">GC</string>
     <string name="gd">DG</string>
     <string name="settings">Ajustes</string>
+    <string name="darkmode">Modo oscuro</string>
+    <string name="language">Idioma</string>
+    <string-array name="languages">
+        <item>Inglés</item>
+        <item>Español</item>
+    </string-array>
 </resources>
