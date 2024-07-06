@@ -5,6 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.View
 import android.widget.AdapterView
+import android.widget.RadioGroup
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -51,46 +52,40 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-        val languageSpinner: Spinner = findViewById(R.id.languageSpinner)
+        localeService = LocaleService(this)
 
-        if (isLocaleUpdated) {
-            isLocaleUpdated = false
-            //previousLanguage = languageSpinner.getItemAtPosition(localeService.getLanguage())?.toString()
+        val languageRadioGroup : RadioGroup = findViewById(R.id.languageRadioGroup)
 
-        }
-
-        localeService = LocaleService(context = this)
-        languageSpinner.setSelection(localeService.getLanguage())
-
-        languageSpinner.onItemSelectedListener = object : AdapterView
-        .OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                if (isInitialSelection) {
-                    isInitialSelection = false // Reset the flag
-                    return // Ignore initial selection
-                }
-                val language = parent?.getItemAtPosition(position) as String
-
-                if(language != previousLanguage) {
-                    changeLocale(language)
-                }
+        when (localeService.getLanguage()) {
+            "English" -> {
+                languageRadioGroup.check(R.id.englishRadioButton)
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {
+            "Spanish" -> {
+                languageRadioGroup.check(R.id.spanishRadioButton)
+            }
+        }
 
+        languageRadioGroup.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
+                R.id.englishRadioButton -> {
+                    // Handle English selection
+                    changeLocale("English") // Or however you handle locale changes
+                }
+                R.id.spanishRadioButton -> {
+                    // Handle Spanish selection
+                    changeLocale("Spanish")
+                }
+                // Add more cases for other languages
             }
         }
 
     }
 
-    fun changeLocale(language : String){
+    private fun changeLocale(language : String){
         localeService.setLanguage(language)
-        previousLanguage = language
+        recreate()
+
     }
 
     fun closeSettings(view: View) {

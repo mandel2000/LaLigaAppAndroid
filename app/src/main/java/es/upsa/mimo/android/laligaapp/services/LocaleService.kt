@@ -17,18 +17,16 @@ class LocaleService (private val context: Context){
         Locale.setDefault(locale)
         val resources = context.resources
         val config = resources.configuration
-        config.setLocale(locale)
-
-        resources.updateConfiguration(config, resources.displayMetrics)
+        context.resources.configuration.setLocale(locale)
 
     }
 
-    fun getLanguage(): Int {
+    fun getLanguage(): String {
         val optionSelected =
             when(Locale.getDefault()){
-                Locale.ENGLISH -> 1
-                Locale.forLanguageTag("es") -> 2
-                else -> 1
+                Locale.ENGLISH -> "English"
+                Locale.forLanguageTag("es") -> "Spanish"
+                else -> "English"
         }
         return optionSelected
 

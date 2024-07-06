@@ -1,0 +1,37 @@
+{
+    "errors": [
+    ],
+    "get": "teams",
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "parameters": {
+        "id": "541",
+        "league": "140",
+        "season": "2023"
+    },
+    "response": [
+        {
+            "team": {
+                "code": "REA",
+                "country": "Spain",
+                "founded": 1902,
+                "id": 541,
+                "logo": "https://media.api-sports.io/football/teams/541.png",
+                "name": "Real Madrid",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida de Concha Espina 1, Chamartín",
+                "capacity": 85454,
+                "city": "Madrid",
+                "id": 1456,
+                "image": "https://media.api-sports.io/football/venues/1456.png",
+                "name": "Estadio Santiago Bernabéu",
+                "surface": "grass"
+            }
+        }
+    ],
+    "results": 1
+}

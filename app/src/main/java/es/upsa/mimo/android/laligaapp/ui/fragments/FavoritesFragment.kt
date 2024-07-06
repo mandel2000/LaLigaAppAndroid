@@ -4,8 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import es.upsa.mimo.android.laligaapp.BuildConfig
 import android.widget.GridView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -29,28 +30,40 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites){
         super.onViewCreated(view, savedInstanceState)
 
         val favTeamsGridView : GridView = view.findViewById(R.id.teamFavoritesGridView)
-        val sharedViewModel: SharedViewModel by activityViewModels()
-        sharedViewModel.database.teamDao().let { teamDao ->
-            lifecycleScope.launch {
-                val teams = teamDao.getAllTeams()
-                teams.collect { teamList ->
-                    val mutableTeamList = teamList.toMutableList()
-                    val favTeamsAdapter = FavTeamsGridAdapter(teamList = mutableTeamList, requireContext(),
-                        object: OnItemClickListener{
-                            override fun onFavButtonClicked(position: Int, id: Int) {
-                                lifecycleScope.launch {
+        val favTeamsTextView : TextView = view.findViewById(R.id.favoritesTextView)
 
-                                    teamDao.deleteTeam(id)
-                                    mutableTeamList.removeAt(position)
-                                    (favTeamsGridView.adapter as? FavTeamsGridAdapter)?.notifyDataSetChanged()
-                                }
-                            }
+        if(BuildConfig.FLAVOR == "free"){
+            favTeamsGridView.visibility = View.GONE
+            favTeamsTextView.visibility = View.VISIBLE
+        }else{
 
-                        })
-                    favTeamsGridView.adapter = favTeamsAdapter
+            favTeamsGridView.visibility = View.VISIBLE
+            favTeamsTextView.visibility = View.GONE
+
+            val sharedViewModel: SharedViewModel by activityViewModels()
+            sharedViewModel.database.teamDao().let { teamDao ->
+                lifecycleScope.launch {
+                    val teams = teamDao.getAllTeams()
+                    teams.collect { teamList ->
+                        val mutableTeamList = teamList.toMutableList()
+                        val favTeamsAdapter =
+                            FavTeamsGridAdapter(teamList = mutableTeamList, requireContext(),
+                                object : OnItemClickListener {
+                                    override fun onFavButtonClicked(position: Int, id: Int) {
+                                        lifecycleScope.launch {
+
+                                            teamDao.deleteTeam(id)
+                                            mutableTeamList.removeAt(position)
+                                            (favTeamsGridView.adapter as? FavTeamsGridAdapter)?.notifyDataSetChanged()
+                                        }
+                                    }
+
+                                })
+                        favTeamsGridView.adapter = favTeamsAdapter
+
+                    }
 
                 }
-
             }
         }
     }

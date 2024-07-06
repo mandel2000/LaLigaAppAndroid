@@ -1,0 +1,416 @@
+{
+    "errors": [
+    ],
+    "get": "teams",
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "parameters": {
+        "league": "140",
+        "season": "2023"
+    },
+    "response": [
+        {
+            "team": {
+                "code": "BAR",
+                "country": "Spain",
+                "founded": 1899,
+                "id": 529,
+                "logo": "https://media.api-sports.io/football/teams/529.png",
+                "name": "Barcelona",
+                "national": false
+            },
+            "venue": {
+                "address": "Carrer de l&apos;Estadi",
+                "capacity": 55926,
+                "city": "Barcelona",
+                "id": 19939,
+                "image": "https://media.api-sports.io/football/venues/19939.png",
+                "name": "Estadi Olímpic Lluís Companys",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "MAD",
+                "country": "Spain",
+                "founded": 1903,
+                "id": 530,
+                "logo": "https://media.api-sports.io/football/teams/530.png",
+                "name": "Atletico Madrid",
+                "national": false
+            },
+            "venue": {
+                "address": "Rosas",
+                "capacity": 70460,
+                "city": "Madrid",
+                "id": 19217,
+                "image": "https://media.api-sports.io/football/venues/19217.png",
+                "name": "Estádio Cívitas Metropolitano",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "BIL",
+                "country": "Spain",
+                "founded": 1898,
+                "id": 531,
+                "logo": "https://media.api-sports.io/football/teams/531.png",
+                "name": "Athletic Club",
+                "national": false
+            },
+            "venue": {
+                "address": "Rafael Moreno Pitxitxi Kalea",
+                "capacity": 53289,
+                "city": "Bilbao",
+                "id": 1460,
+                "image": "https://media.api-sports.io/football/venues/1460.png",
+                "name": "San Mamés Barria",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "VAL",
+                "country": "Spain",
+                "founded": 1919,
+                "id": 532,
+                "logo": "https://media.api-sports.io/football/teams/532.png",
+                "name": "Valencia",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida de Suecia",
+                "capacity": 55000,
+                "city": "Valencia",
+                "id": 1497,
+                "image": "https://media.api-sports.io/football/venues/1497.png",
+                "name": "Estadio de Mestalla",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "VIL",
+                "country": "Spain",
+                "founded": 1923,
+                "id": 533,
+                "logo": "https://media.api-sports.io/football/teams/533.png",
+                "name": "Villarreal",
+                "national": false
+            },
+            "venue": {
+                "address": "Plaza Labrador",
+                "capacity": 24500,
+                "city": "Villarreal",
+                "id": 1498,
+                "image": "https://media.api-sports.io/football/venues/1498.png",
+                "name": "Estadio de la Cerámica",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "PAL",
+                "country": "Spain",
+                "founded": 1949,
+                "id": 534,
+                "logo": "https://media.api-sports.io/football/teams/534.png",
+                "name": "Las Palmas",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida Pío XII 29",
+                "capacity": 32392,
+                "city": "Las Palmas de Gran Canaria",
+                "id": 1481,
+                "image": "https://media.api-sports.io/football/venues/1481.png",
+                "name": "Estadio de Gran Canaria",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "SEV",
+                "country": "Spain",
+                "founded": 1890,
+                "id": 536,
+                "logo": "https://media.api-sports.io/football/teams/536.png",
+                "name": "Sevilla",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida de Eduardo Dato",
+                "capacity": 48649,
+                "city": "Sevilla",
+                "id": 1494,
+                "image": "https://media.api-sports.io/football/venues/1494.png",
+                "name": "Estadio Ramón Sánchez Pizjuán",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "CEL",
+                "country": "Spain",
+                "founded": 1923,
+                "id": 538,
+                "logo": "https://media.api-sports.io/football/teams/538.png",
+                "name": "Celta Vigo",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida de Balaídos",
+                "capacity": 31800,
+                "city": "Vigo",
+                "id": 1467,
+                "image": "https://media.api-sports.io/football/venues/1467.png",
+                "name": "Abanca-Balaídos",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "REA",
+                "country": "Spain",
+                "founded": 1902,
+                "id": 541,
+                "logo": "https://media.api-sports.io/football/teams/541.png",
+                "name": "Real Madrid",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida de Concha Espina 1, Chamartín",
+                "capacity": 85454,
+                "city": "Madrid",
+                "id": 1456,
+                "image": "https://media.api-sports.io/football/venues/1456.png",
+                "name": "Estadio Santiago Bernabéu",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "ALA",
+                "country": "Spain",
+                "founded": 1921,
+                "id": 542,
+                "logo": "https://media.api-sports.io/football/teams/542.png",
+                "name": "Alaves",
+                "national": false
+            },
+            "venue": {
+                "address": "Paseo de Cervantes",
+                "capacity": 19840,
+                "city": "Vitoria-Gasteiz",
+                "id": 1470,
+                "image": "https://media.api-sports.io/football/venues/1470.png",
+                "name": "Estadio de Mendizorroza",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "BET",
+                "country": "Spain",
+                "founded": 1907,
+                "id": 543,
+                "logo": "https://media.api-sports.io/football/teams/543.png",
+                "name": "Real Betis",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida de Heliópolis",
+                "capacity": 60721,
+                "city": "Sevilla",
+                "id": 1489,
+                "image": "https://media.api-sports.io/football/venues/1489.png",
+                "name": "Estadio Benito Villamarín",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "GET",
+                "country": "Spain",
+                "founded": 1983,
+                "id": 546,
+                "logo": "https://media.api-sports.io/football/teams/546.png",
+                "name": "Getafe",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida de Teresa de Calcuta",
+                "capacity": 17393,
+                "city": "Getafe",
+                "id": 20422,
+                "image": "https://media.api-sports.io/football/venues/20422.png",
+                "name": "Estadio Coliseum",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "GIR",
+                "country": "Spain",
+                "founded": 1930,
+                "id": 547,
+                "logo": "https://media.api-sports.io/football/teams/547.png",
+                "name": "Girona",
+                "national": false
+            },
+            "venue": {
+                "address": "Avenida Montlivi 141",
+                "capacity": 14500,
+                "city": "Girona",
+                "id": 1478,
+                "image": "https://media.api-sports.io/football/venues/1478.png",
+                "name": "Estadi Municipal de Montilivi",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "RSO",
+                "country": "Spain",
+                "founded": 1909,
+                "id": 548,
+                "logo": "https://media.api-sports.io/football/teams/548.png",
+                "name": "Real Sociedad",
+                "national": false
+            },
+            "venue": {
+                "address": "Paseo de Anoeta 1",
+                "capacity": 39500,
+                "city": "Donostia-San Sebastián",
+                "id": 1491,
+                "image": "https://media.api-sports.io/football/venues/1491.png",
+                "name": "Reale Arena",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "GRA",
+                "country": "Spain",
+                "founded": 1931,
+                "id": 715,
+                "logo": "https://media.api-sports.io/football/teams/715.png",
+                "name": "Granada CF",
+                "national": false
+            },
+            "venue": {
+                "address": "Calle Pintor Manuel Maldonado",
+                "capacity": 23156,
+                "city": "Granada",
+                "id": 1479,
+                "image": "https://media.api-sports.io/football/venues/1479.png",
+                "name": "Estadio Nuevo Los Cármenes",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "ALM",
+                "country": "Spain",
+                "founded": 1989,
+                "id": 723,
+                "logo": "https://media.api-sports.io/football/teams/723.png",
+                "name": "Almeria",
+                "national": false
+            },
+            "venue": {
+                "address": "Calle de Belladona",
+                "capacity": 21350,
+                "city": "Almería",
+                "id": 19216,
+                "image": "https://media.api-sports.io/football/venues/19216.png",
+                "name": "Power Horse Stadium – Estadio de los Juegos Mediterráneos",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "CAD",
+                "country": "Spain",
+                "founded": 1910,
+                "id": 724,
+                "logo": "https://media.api-sports.io/football/teams/724.png",
+                "name": "Cadiz",
+                "national": false
+            },
+            "venue": {
+                "address": "Plaza de Madrid",
+                "capacity": 22000,
+                "city": "Cádiz",
+                "id": 11915,
+                "image": "https://media.api-sports.io/football/venues/11915.png",
+                "name": "Estadio Nuevo Mirandilla",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "OSA",
+                "country": "Spain",
+                "founded": 1920,
+                "id": 727,
+                "logo": "https://media.api-sports.io/football/teams/727.png",
+                "name": "Osasuna",
+                "national": false
+            },
+            "venue": {
+                "address": "Carretera El Sadar",
+                "capacity": 23576,
+                "city": "Iruñea",
+                "id": 1486,
+                "image": "https://media.api-sports.io/football/venues/1486.png",
+                "name": "Estadio El Sadar",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "RAY",
+                "country": "Spain",
+                "founded": 1924,
+                "id": 728,
+                "logo": "https://media.api-sports.io/football/teams/728.png",
+                "name": "Rayo Vallecano",
+                "national": false
+            },
+            "venue": {
+                "address": "Calle Payaso Fofó",
+                "capacity": 15500,
+                "city": "Madrid",
+                "id": 1488,
+                "image": "https://media.api-sports.io/football/venues/1488.png",
+                "name": "Estadio de Vallecas",
+                "surface": "grass"
+            }
+        },
+        {
+            "team": {
+                "code": "MAL",
+                "country": "Spain",
+                "founded": 1916,
+                "id": 798,
+                "logo": "https://media.api-sports.io/football/teams/798.png",
+                "name": "Mallorca",
+                "national": false
+            },
+            "venue": {
+                "address": "Camí dels Reis",
+                "capacity": 23142,
+                "city": "Palma de Mallorca",
+                "id": 19940,
+                "image": "https://media.api-sports.io/football/venues/19940.png",
+                "name": "Estadi Mallorca Son Moix",
+                "surface": "grass"
+            }
+        }
+    ],
+    "results": 20
+}

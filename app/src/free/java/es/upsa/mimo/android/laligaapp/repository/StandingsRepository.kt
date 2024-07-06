@@ -8,9 +8,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class StandingsRepository (private val apiService: ApiService) {
+class StandingsRepository (private val apiService: ApiService) : StandingRepository{
 
-    suspend fun getStandings(league: Int, season: Int): Flow<ApiState<StandingsResponse>> {
+    override suspend fun getStandings(league: Int, season: Int): Flow<ApiState<StandingsResponse>> {
         return flow{
             val standings = apiService.getStandings(league, season)
             emit(ApiState.success(standings))

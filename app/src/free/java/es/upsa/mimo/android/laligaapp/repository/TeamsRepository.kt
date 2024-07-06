@@ -9,9 +9,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class TeamsRepository (private val apiService: ApiService){
+class TeamsRepository (private val apiService: ApiService) : TeamRepository {
 
-    suspend fun getTeams(league: Int, season: Int): Flow<ApiState<TeamsResponse>> {
+    override suspend fun getTeams(league: Int, season: Int): Flow<ApiState<TeamsResponse>> {
         return flow {
 
             // get the teams Data from the api
@@ -23,14 +23,14 @@ class TeamsRepository (private val apiService: ApiService){
         }.flowOn(Dispatchers.IO)
     }
 
-    suspend fun getTeamDetail(league: Int, team: Int, season: Int):Flow<ApiState<TeamsResponse>>{
+    override suspend fun getTeamDetail(league: Int, team: Int, season: Int):Flow<ApiState<TeamsResponse>>{
         return flow {
             val teamDetail=apiService.getTeamDetail(league, team, season)
             emit(ApiState.success(teamDetail))
         }.flowOn(Dispatchers.IO)
     }
 
-    suspend fun getTeamPlayers(team: Int, season: Int, page: Int,):Flow<ApiState<PlayersResponse>>{
+    override suspend fun getTeamPlayers(team: Int, season: Int, page: Int,):Flow<ApiState<PlayersResponse>>{
         return flow {
             val teamPlayers=apiService.getPlayers(team, season, page)
             emit(ApiState.success(teamPlayers))

@@ -8,9 +8,9 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class FixturesRepository (private val apiService: ApiService){
+class FixturesRepository (private val apiService: ApiService):FixtureRepository{
 
-    suspend fun getFixtures(league: Int, season: Int ): Flow<ApiState<FixturesResponse>> {
+    override suspend fun getFixtures(league: Int, season: Int ): Flow<ApiState<FixturesResponse>> {
         return flow {
 
             val fixtures = apiService.getFixtures(league, season)

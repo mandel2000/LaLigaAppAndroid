@@ -18,6 +18,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import es.upsa.mimo.android.laligaapp.BuildConfig
 import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.adapters.PlayerListAdapter
 import es.upsa.mimo.android.laligaapp.db.entities.TeamEntity
@@ -77,6 +78,10 @@ class TeamDetailFragment : Fragment(R.layout.fragment_team_detail){
                                     val isFav = teamDao.existsById(teamDetails.team?.id!!)
                                     starButton.isChecked = isFav
                                 }
+                            }
+
+                            if(BuildConfig.FLAVOR == "free"){
+                                starButton.visibility = View.GONE
                             }
 
                             starButton.setOnCheckedChangeListener { _, isChecked ->

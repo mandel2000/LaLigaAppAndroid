@@ -9,6 +9,21 @@ android {
     namespace = "es.upsa.mimo.android.laligaapp"
     compileSdk = 34
 
+    flavorDimensions += "type"
+    productFlavors {
+        create("free") {
+            dimension = "type"
+            applicationIdSuffix = ".free"
+            resValue("string", "app_name_free", "La Liga App Free")
+        }
+
+        create("paid") {
+            dimension = "type"
+            applicationIdSuffix = ".paid"
+            resValue("string", "app_name_paid", "La Liga App Paid")
+        }
+    }
+
     defaultConfig {
         applicationId = "es.upsa.mimo.android.laligaapp"
         minSdk = 24
@@ -41,6 +56,7 @@ android {
     buildFeatures {
         compose = true
         viewBinding = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -50,8 +66,17 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    sourceSets {
+        getByName("paid") {
+            java.srcDir("src/paid/java")
+            assets.srcDir("src/paid/assets")
+        }
+        getByName("free") {
+            java.srcDir("src/free/java")
+            assets.srcDir("src/free/assets")
+        }
+    }
 }
-
 dependencies {
 
     implementation("androidx.core:core-ktx:1.13.1")

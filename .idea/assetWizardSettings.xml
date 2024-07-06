@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -18,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/shield/baseline_shield_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/settings/baseline_settings_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +33,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="teams" />
-                            <entry key="sourceFile" value="F:\datos\Manuel\MIMO\4.Android\projects\LaLigaAppAndroid" />
+                            <entry key="color" value="0872ec" />
+                            <entry key="outputName" value="settings" />
+                            <entry key="sourceFile" value="/F:\datos\Manuel\MIMO\4.Android\projects\LaLigaAppAndroid" />
                           </map>
                         </option>
                       </PersistentState>

@@ -18,4 +18,8 @@
         <item>Inglés</item>
         <item>Español</item>
     </string-array>
+    <string name="english">Inglés</string>
+    <string name="spanish">Español</string>
+    <string name="favorites_not_available">Los favoritos solo están disponibles en la versión de pago</string>
+    <string name="players">Jugadores</string>
 </resources>

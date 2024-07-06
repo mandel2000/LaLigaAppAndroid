@@ -3,7 +3,6 @@ package es.upsa.mimo.android.laligaapp.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import es.upsa.mimo.android.laligaapp.model.players.PlayersResponse
-import es.upsa.mimo.android.laligaapp.model.teams.TeamsResponse
 import es.upsa.mimo.android.laligaapp.network.ApiClient
 import es.upsa.mimo.android.laligaapp.network.ApiState
 import es.upsa.mimo.android.laligaapp.network.Status

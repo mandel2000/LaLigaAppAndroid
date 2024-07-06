@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="@id/teamName"
         app:layout_constraintBottom_toBottomOf="@id/teamName"/>
 
-    <TextView
+    <es.upsa.mimo.android.laligaapp.ui.customviews.TitleTextView
         android:id="@+id/playersHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,7 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
-        android:text="Jugadores"
+        android:text="@string/players"
         />
 
     <androidx.recyclerview.widget.RecyclerView
