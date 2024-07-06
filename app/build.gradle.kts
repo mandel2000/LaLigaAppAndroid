@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs")
     id ("org.jetbrains.kotlin.kapt")
+    id("com.google.dagger.hilt.android") version "2.51.1"
 }
 
 android {
@@ -35,17 +36,25 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+        javaCompileOptions {
+            annotationProcessorOptions {
+                argument("room.schemaLocation", "$projectDir/schemas")
+            }
         }
     }
+
+    sourceSets {
+        getByName("paid") {
+            java.srcDir("src/paid/java")
+            res.srcDir("src/paid/res") // If you have variant-specific resources
+        }
+        getByName("free") {
+            java.srcDir("src/free/java")
+            res.srcDir("src/free/res") // If you have variant-specific resources
+            assets.srcDir("src/free/assets")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -61,24 +70,25 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
+    hilt {
+        enableAggregatingTask = true
+    }
+    kotlin {
+        sourceSets {
+            getByName("paid") {
+                kotlin.srcDir("build/generated/hilt/component_sources/paid")
+            }
+        }
+    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    sourceSets {
-        getByName("paid") {
-            java.srcDir("src/paid/java")
-            assets.srcDir("src/paid/assets")
-        }
-        getByName("free") {
-            java.srcDir("src/free/java")
-            assets.srcDir("src/free/assets")
-        }
-    }
+
 }
 dependencies {
-
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.0")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.3")
     implementation("androidx.activity:activity-compose:1.9.0")
@@ -91,25 +101,26 @@ dependencies {
     implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
     implementation ("com.google.android.material:material:1.12.0")
     implementation ("androidx.appcompat:appcompat:1.7.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.9.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1")
     implementation ("androidx.compose.material:material-icons-extended:1.6.8")
-    implementation ("com.github.bumptech.glide:glide:4.13.0")
-    implementation("androidx.activity:activity:1.9.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.activity:activity-ktx:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.13.0")
+    kapt ("com.github.bumptech.glide:compiler:4.16.0")
     implementation("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("androidx.viewpager2:viewpager2:1.1.0")
     implementation ("com.google.android.material:material:1.12.0")
-    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
     implementation("androidx.preference:preference-ktx:1.2.1")
-
     implementation("androidx.room:room-ktx:2.6.1")
+    implementation("com.google.code.gson:gson:2.10.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
@@ -117,5 +128,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.51.1")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.51.1")
 
 }

@@ -12,13 +12,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
+import dagger.hilt.android.AndroidEntryPoint
 import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.adapters.FixturesAdapter
 import es.upsa.mimo.android.laligaapp.network.Status
 import es.upsa.mimo.android.laligaapp.ui.decoration.DividerItemDecoration
 import es.upsa.mimo.android.laligaapp.viewmodel.FixturesViewModel
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class FixturesFragment : Fragment(R.layout.fragment_fixtures){
 
     private lateinit var viewModel: FixturesViewModel

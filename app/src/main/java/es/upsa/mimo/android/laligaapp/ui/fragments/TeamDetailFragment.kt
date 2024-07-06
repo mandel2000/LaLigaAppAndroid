@@ -18,6 +18,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import es.upsa.mimo.android.laligaapp.BuildConfig
 import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.adapters.PlayerListAdapter
@@ -28,6 +29,8 @@ import es.upsa.mimo.android.laligaapp.viewmodel.PlayersViewModel
 import es.upsa.mimo.android.laligaapp.viewmodel.SharedViewModel
 import es.upsa.mimo.android.laligaapp.viewmodel.TeamsViewModel
 import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
 
 class TeamDetailFragment : Fragment(R.layout.fragment_team_detail){
 

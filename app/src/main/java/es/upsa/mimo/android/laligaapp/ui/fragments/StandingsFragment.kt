@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import dagger.hilt.android.AndroidEntryPoint
 import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.adapters.StandingsAdapter
 import es.upsa.mimo.android.laligaapp.network.ApiClient
@@ -17,6 +18,7 @@ import es.upsa.mimo.android.laligaapp.network.Status
 import es.upsa.mimo.android.laligaapp.ui.decoration.TableDividerItemDecorator
 import es.upsa.mimo.android.laligaapp.viewmodel.StandingsViewModel
 import kotlinx.coroutines.launch
+@AndroidEntryPoint
 
 class StandingsFragment : Fragment(R.layout.fragment_standings){
 

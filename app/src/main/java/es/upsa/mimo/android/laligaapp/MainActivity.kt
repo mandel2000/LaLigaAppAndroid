@@ -15,11 +15,13 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import androidx.room.Room
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 import es.upsa.mimo.android.laligaapp.activities.SettingsActivity
 import es.upsa.mimo.android.laligaapp.db.AppDatabase
 import es.upsa.mimo.android.laligaapp.ui.customviews.CustomToolbar
 import es.upsa.mimo.android.laligaapp.viewmodel.SharedViewModel
-
+@AndroidEntryPoint
 
 class MainActivity : AppCompatActivity() {
 

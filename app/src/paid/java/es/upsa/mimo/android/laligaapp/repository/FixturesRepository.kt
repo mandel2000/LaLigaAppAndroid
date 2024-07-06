@@ -7,8 +7,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import javax.inject.Inject
 
-class FixturesRepository (private val apiService: ApiService):FixtureRepository{
+class FixturesRepository @Inject constructor (private val apiService: ApiService):FixtureRepository{
 
     override suspend fun getFixtures(league: Int, season: Int ): Flow<ApiState<FixturesResponse>> {
         return flow {
