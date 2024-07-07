@@ -52,6 +52,8 @@ class TeamInfoFragment : Fragment(R.layout.fragment_team_info){
         val teamName: TextView = view.findViewById(R.id.teamName)
         val city: TextView = view.findViewById(R.id.city)
         val starButton: ToggleButton = view.findViewById(R.id.favButton)
+        val stadium : TextView = view.findViewById(R.id.stadiumValue)
+        val stadiumPhoto : ImageView = view.findViewById(R.id.stadiumPhoto)
 
         lifecycleScope.launch {
             teamsViewModel.teamsState.collect{
@@ -65,6 +67,9 @@ class TeamInfoFragment : Fragment(R.layout.fragment_team_info){
                             teamName.text = teamDetails.team?.name
                             city.text = teamDetails.venue?.city + ", " + teamDetails.team?.country
                             Glide.with(view).load(teamDetails.team?.logo).into(teamBadge)
+                            stadium.text = teamDetails.venue?.name
+                            Glide.with(view).load(teamDetails.venue?.image).into(stadiumPhoto)
+
                             val sharedViewModel: SharedViewModel by activityViewModels()
                             sharedViewModel.database.teamDao().let { teamDao ->
                                 lifecycleScope.launch {

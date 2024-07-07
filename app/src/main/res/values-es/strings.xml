@@ -22,4 +22,7 @@
     <string name="spanish">Español</string>
     <string name="favorites_not_available">Los favoritos solo están disponibles en la versión de pago</string>
     <string name="players">Jugadores</string>
+    <string name="add_to_fav">Añadir a Favoritos</string>
+    <string name="remove_from_fav">Eliminar de Favoritos</string>
+    <string name="stadium">"Estadio: "</string>
 </resources>
