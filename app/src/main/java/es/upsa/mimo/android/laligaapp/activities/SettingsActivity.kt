@@ -1,5 +1,6 @@
 package es.upsa.mimo.android.laligaapp.activities
 
+import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -8,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.RadioGroup
 import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SwitchCompat
@@ -18,8 +20,11 @@ import com.google.android.material.materialswitch.MaterialSwitch
 import es.upsa.mimo.android.laligaapp.R
 import es.upsa.mimo.android.laligaapp.services.DarkModeService
 import es.upsa.mimo.android.laligaapp.services.LocaleService
+import es.upsa.mimo.android.laligaapp.viewmodel.LocaleViewModel
 
 class SettingsActivity : AppCompatActivity() {
+
+    val localeViewModel: LocaleViewModel by viewModels()
 
     private lateinit var darkModeService : DarkModeService
     private lateinit var localeService: LocaleService
@@ -52,7 +57,7 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-        localeService = LocaleService(this)
+        localeService = LocaleService(applicationContext)
 
         val languageRadioGroup : RadioGroup = findViewById(R.id.languageRadioGroup)
 
@@ -83,9 +88,9 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun changeLocale(language : String){
-        localeService.setLanguage(language)
-        recreate()
-
+        val newLocale = localeService.setLanguage(language)
+        localeViewModel.setLocale(newLocale)
+        (this as Activity).recreate()
     }
 
     fun closeSettings(view: View) {

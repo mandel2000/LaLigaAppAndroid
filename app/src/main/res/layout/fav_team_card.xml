@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:text="Remove from Favourites"
+            android:text="@string/remove_from_fav"
             />
 
     </LinearLayout>

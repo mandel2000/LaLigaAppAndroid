@@ -25,4 +25,5 @@
     <string name="add_to_fav">Añadir a Favoritos</string>
     <string name="remove_from_fav">Eliminar de Favoritos</string>
     <string name="stadium">"Estadio: "</string>
+    <string name="team_info">Información</string>
 </resources>

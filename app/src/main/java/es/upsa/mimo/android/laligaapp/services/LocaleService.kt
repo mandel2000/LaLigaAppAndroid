@@ -1,11 +1,12 @@
 package es.upsa.mimo.android.laligaapp.services
 
+import android.app.Activity
 import android.content.Context
 import java.util.Locale
 
 class LocaleService (private val context: Context){
 
-    fun setLanguage(selectedLanguage : String){
+    fun setLanguage(selectedLanguage : String): Locale {
         val locale = when (selectedLanguage) {
             "English" -> Locale.ENGLISH
             "Inglés" -> Locale.ENGLISH
@@ -18,7 +19,8 @@ class LocaleService (private val context: Context){
         val resources = context.resources
         val config = resources.configuration
         context.resources.configuration.setLocale(locale)
-
+        context.resources.updateConfiguration(config, context.resources.displayMetrics)
+        return locale
     }
 
     fun getLanguage(): String {

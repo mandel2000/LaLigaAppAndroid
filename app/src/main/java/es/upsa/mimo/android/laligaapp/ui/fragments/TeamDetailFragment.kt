@@ -42,8 +42,8 @@ class TeamDetailFragment : Fragment(R.layout.fragment_team_detail) {
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = when (position) {
-                0 -> "Team Info"
-                1 -> "Players"
+                0 -> R.string.team_info.toString()
+                1 -> R.string.players.toString()
                 else -> ""
             }
         }.attach()

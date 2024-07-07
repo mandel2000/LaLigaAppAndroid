@@ -20,10 +20,13 @@ import dagger.hilt.android.HiltAndroidApp
 import es.upsa.mimo.android.laligaapp.activities.SettingsActivity
 import es.upsa.mimo.android.laligaapp.db.AppDatabase
 import es.upsa.mimo.android.laligaapp.ui.customviews.CustomToolbar
+import es.upsa.mimo.android.laligaapp.viewmodel.LocaleViewModel
 import es.upsa.mimo.android.laligaapp.viewmodel.SharedViewModel
 @AndroidEntryPoint
 
 class MainActivity : AppCompatActivity() {
+
+    val localeViewModel: LocaleViewModel by viewModels()
 
     private lateinit var navController: NavController
     private lateinit var navView: BottomNavigationView
@@ -35,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         navView.setupWithNavController(navController)
+
+        localeViewModel.currentLocale.observe(this) { newLocale ->
+            Log.d("LANGUAGE", "New locale: $newLocale")
+            this.recreate()
+        }
 
         navView.setOnItemSelectedListener { item ->
             Log.d("Navigation", "BottomNavigationView item selected: ${item.title}")
