@@ -10,4 +10,5 @@
     <color name="colorOnAccent">#000000</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="teamNameColor">#424242</color>
 </resources>

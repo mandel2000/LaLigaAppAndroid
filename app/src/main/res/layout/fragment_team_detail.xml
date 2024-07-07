@@ -25,14 +25,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/teamBadge" />
 
-    <TextView
+    <es.upsa.mimo.android.laligaapp.ui.customviews.TeamNameTextView
         android:id="@+id/teamName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text = "FC Barcelona"
         app:layout_constraintStart_toStartOf="@id/city"
         app:layout_constraintTop_toBottomOf="@id/city"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="15dp"/>
 
     <ToggleButton
         android:id="@+id/favButton"
