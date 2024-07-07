@@ -1,72 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/teamBadge"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:gravity="center_horizontal"
-        android:scaleType="fitCenter"
-        android:src="@drawable/ic_teams"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/city"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Barcelona, España"
-        app:layout_constraintEnd_toEndOf="@id/teamBadge"
-        app:layout_constraintHorizontal_bias="0.225"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/teamBadge" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <es.upsa.mimo.android.laligaapp.ui.customviews.TeamNameTextView
-        android:id="@+id/teamName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = "FC Barcelona"
-        app:layout_constraintStart_toStartOf="@id/city"
-        app:layout_constraintTop_toBottomOf="@id/city"
-        android:layout_marginTop="15dp"/>
-
-    <ToggleButton
-        android:id="@+id/favButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:checked="false"
-        android:textOff="NOFAV"
-        android:textOn="FAV"
-        app:buttonCompat="@drawable/star_selector"
-        app:layout_constraintStart_toEndOf="@id/teamName"
-        app:layout_constraintTop_toTopOf="@id/teamName"
-        app:layout_constraintBottom_toBottomOf="@id/teamName"/>
-
-    <es.upsa.mimo.android.laligaapp.ui.customviews.TitleTextView
-        android:id="@+id/playersHeader"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/teamName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:text="@string/players"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/playerList"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/playersHeader"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="10dp"
-        android:paddingStart="60dp"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

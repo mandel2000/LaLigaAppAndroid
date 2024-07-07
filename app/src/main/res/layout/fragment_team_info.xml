@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/teamBadge"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:gravity="center_horizontal"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_teams"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <es.upsa.mimo.android.laligaapp.ui.customviews.TeamNameTextView
+        android:id="@+id/teamName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text = "FC Barcelona"
+        android:gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/teamBadge"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Barcelona, España"
+        app:layout_constraintEnd_toEndOf="@id/teamBadge"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/teamBadge" />
+
+    <ToggleButton
+        android:id="@+id/favButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checked="false"
+        android:textOff="NOFAV"
+        android:textOn="FAV"
+        app:buttonCompat="@drawable/star_selector"
+        app:layout_constraintStart_toEndOf="@id/teamName"
+        app:layout_constraintTop_toTopOf="@id/teamName"
+        app:layout_constraintBottom_toBottomOf="@id/teamName"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
